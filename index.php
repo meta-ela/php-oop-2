@@ -12,4 +12,14 @@ Alcuni prodotti (es. antipulci) avranno la caratteristica che saranno disponibil
 
 require_once "classi/Products.php";
 require_once "classi/Aliments.php";
+require_once "classi/Games.php";
+require_once "classi/Accessories.php";
 
+$products = new Products("cibo", "alimento", "10");
+$alimets = new Aliments("pollo", "1 mese");
+
+/* $products->setName("cibo")->setType("aliments")->setPrice("10"); */
+
+var_dump($products, $alimets);
+
+?>

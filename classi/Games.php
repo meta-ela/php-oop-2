@@ -1,6 +1,7 @@
 <?php
+require_once __DIR__ . "/Products.php";
 
-class Games 
+class Games extends Products
 {
     public $material;
     public $color;

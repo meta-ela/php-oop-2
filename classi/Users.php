@@ -1,6 +1,6 @@
 <?php
-
-class User 
+require_once __DIR__ . "/PaymentMetod.php";
+class User extends PaymentMetod
 {
     public $firstName;
     public $lastName;
