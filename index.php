@@ -7,3 +7,9 @@ Il pagamento avviene con la carta di credito, che non deve essere scaduta.
 BONUS:
 Alcuni prodotti (es. antipulci) avranno la caratteristica che saranno disponibili solo in un periodo particolare (es. da maggio ad agosto).
  -->
+
+<?php
+
+require_once "classi/Products.php";
+require_once "classi/Aliments.php";
+
