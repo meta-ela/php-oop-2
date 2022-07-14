@@ -9,8 +9,8 @@ class Aliments extends Products
 
     public function __construct($_ingredients, $_expire)
     {
-        $this->ingredients = $_ingredients;
-        $this->expire = $_expire;
+        $this->setIngredients($_ingredients);
+        $this->setExpire($_expire);
     }
 
     /**

@@ -1,16 +1,17 @@
 <?php
-require_once __DIR__ . "/PaymentMetod.php";
-class User extends PaymentMetod
+class Users
 {
     public $firstName;
     public $lastName;
     public $email;
+    public $registered;
 
-    public function __construct($_firstName, $_lastName, $_email)
+    public function __construct($_firstName, $_lastName, $_email, $_registered)
     {
-        $this->firstName = $_firstName;
-        $this->lastName = $_lastName;
-        $this->email = $_email;
+        $this->setFirstName($_firstName);
+        $this->setLastName($_lastName);
+        $this->setEmail($_email);
+        $this->setRegistered($_registered);
     }
 
     /**
@@ -69,6 +70,26 @@ class User extends PaymentMetod
     public function setEmail($email)
     {
         $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of registered
+     */ 
+    public function getRegistered()
+    {
+        return $this->registered;
+    }
+
+    /**
+     * Set the value of registered
+     *
+     * @return  self
+     */ 
+    public function setRegistered($registered)
+    {
+        $this->registered = $registered;
 
         return $this;
     }

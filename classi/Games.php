@@ -8,8 +8,8 @@ class Games extends Products
 
     public function __construct($_material, $_color)
     {
-        $this->material = $_material;
-        $this->color = $_color;
+        $this->setMaterial($_material);
+        $this->setColor($_color);
     }
 
     /**

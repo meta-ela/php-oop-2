@@ -8,9 +8,9 @@ class Products
 
     public function __construct($_name, $_type, $_price)
     {
-        $this->name = $_name;
-        $this->type = $_type;
-        $this->price = $_price;
+        $this->setName($_name);
+        $this->setType($_type);
+        $this->setPrice($_price);
     }
 
     /**
