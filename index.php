@@ -15,14 +15,22 @@ require_once "classi/Aliments.php";
 require_once "classi/Games.php";
 require_once "classi/Accessories.php";
 require_once "classi/Users.php";
-require_once "classi/PaymentMetod.php";
+require_once "classi/PaymentMethod.php";
 
-$user = new Users("Luca", "Verdi", "lucaverdi@live.it", "false");
-$products = new Products("cibo", "alimento", "10");
-$alimets = new Aliments("pollo", "1 mese");
+$user = new Users("Mario", "Rossi", "mariorossi@gmail.com");
+var_dump($user);
 
-/* $products->setName("cibo")->setType("aliments")->setPrice("10"); */
+$user->register("Lucia", "Bianchi", "luciabianchi@gmail.com");
+var_dump($user);
 
-var_dump($user, $products, $alimets);
+
+$products = [
+    new Aliments("Crocchette", 3.50, "pesce", "2022-12-31"),
+    new Aliments("Bastoncini", 4.50, "pollo", "2022-11-25"),
+    new Games("Palla", 7.40, "stoffa", "verde"),
+    new Games("Fresbee", 5.90, "plastica riciclata", "giallo"),
+];
+var_dump($products);
+
 
 ?>

@@ -2,14 +2,12 @@
 
 class Products
 {
-    public $name;
-    public $type;
-    public $price;
+    private string $name;
+    private float $price;
 
-    public function __construct($_name, $_type, $_price)
+    public function __construct($_name, $_price)
     {
         $this->setName($_name);
-        $this->setType($_type);
         $this->setPrice($_price);
     }
 
@@ -29,26 +27,6 @@ class Products
     public function setName($name)
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of type
-     */ 
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * Set the value of type
-     *
-     * @return  self
-     */ 
-    public function setType($type)
-    {
-        $this->type = $type;
 
         return $this;
     }

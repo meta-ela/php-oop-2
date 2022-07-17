@@ -4,11 +4,13 @@ require_once __DIR__ . "/Products.php";
 
 class Aliments extends Products
 {
-    public $ingredients;
-    public $expire;
+    private $ingredients;
+    private $expire;
 
-    public function __construct($_ingredients, $_expire)
+    public function __construct($_name, $_price, $_ingredients, $_expire)
     {
+        parent::__construct($_name, $_price);
+
         $this->setIngredients($_ingredients);
         $this->setExpire($_expire);
     }

@@ -3,11 +3,13 @@ require_once __DIR__ . "/Products.php";
 
 class Games extends Products
 {
-    public $material;
-    public $color;
+    private $material;
+    private $color;
 
-    public function __construct($_material, $_color)
+    public function __construct($_name, $_price, $_material, $_color)
     {
+        parent::__construct($_name, $_price);
+
         $this->setMaterial($_material);
         $this->setColor($_color);
     }

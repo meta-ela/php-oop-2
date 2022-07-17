@@ -1,17 +1,23 @@
 <?php
+require_once __DIR__ . "/Cart.php";
 class Users
 {
-    public $firstName;
-    public $lastName;
-    public $email;
-    public $registered;
+    private $firstName;
+    private $lastName;
+    private $email;
+    private $registered = false;
+    public Cart $cart;
 
-    public function __construct($_firstName, $_lastName, $_email, $_registered)
+    public function __construct($_firstName = null, $_lastName = null, $_email = null)
     {
-        $this->setFirstName($_firstName);
-        $this->setLastName($_lastName);
-        $this->setEmail($_email);
-        $this->setRegistered($_registered);
+        $this->cart = new Cart();
+
+        if(isset($email) && isset($_firstName) && isset($_lastName)) {
+            $this->setFirstName($_firstName);
+            $this->setLastName($_lastName);
+            $this->setEmail($_email);
+            $this->setRegistered(true);
+        }
     }
 
     /**
@@ -92,5 +98,13 @@ class Users
         $this->registered = $registered;
 
         return $this;
+    }
+
+    public function register($_firstName, $_lastName, $_email)
+    {
+        $this->setFirstName($_firstName);
+        $this->setLastName($_lastName);
+        $this->setEmail($_email);
+        $this->setRegistered(true);
     }
 }
