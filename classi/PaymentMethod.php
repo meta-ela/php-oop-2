@@ -1,75 +1,97 @@
 <?php
-require_once __DIR__ . "/Users.php";
-class PaymentMetod extends Users
+
+class PaymentMethod 
 {
-    public $shipmentAddress;
-    public $paymentMethod;
-    public $paymentCard;
+    private $type;
+    private $number;
+    private $cvv;
+    private $expire;
 
-    function __construct($_firstName, $_lastName, $_shipmentsAddress, $_paymentCard)
+    function __construct($_type, $_number, $_cvv, $_expire)
     {
-        parent::__construct($_firstName, $_lastName);
-
-        $this->setShipmentAddress($_shipmentsAddress);
-        $this->setPaymentCard($_paymentCard);
+        $this->setType($_type);
+        $this->setNumber($_number);
+        $this->setCvv($_cvv);
+        $this->setExpire($_expire);
     }
 
+
     /**
-     * Get the value of shipmentAddress
+     * Get the value of type
      */ 
-    public function getShipmentAddress()
+    public function getType()
     {
-        return $this->shipmentAddress;
+        return $this->type;
     }
 
     /**
-     * Set the value of shipmentAddress
+     * Set the value of type
      *
      * @return  self
      */ 
-    public function setShipmentAddress($shipmentAddress)
+    public function setType($type)
     {
-        $this->shipmentAddress = $shipmentAddress;
+        $this->type = $type;
 
         return $this;
     }
 
     /**
-     * Get the value of paymentMethod
+     * Get the value of number
      */ 
-    public function getPaymentMethod()
+    public function getNumber()
     {
-        return $this->paymentMethod;
+        return $this->number;
     }
 
     /**
-     * Set the value of paymentMethod
+     * Set the value of number
      *
      * @return  self
      */ 
-    public function setPaymentMethod($paymentMethod)
+    public function setNumber($number)
     {
-        $this->paymentMethod = $paymentMethod;
+        $this->number = $number;
 
         return $this;
     }
 
     /**
-     * Get the value of paymentCard
+     * Get the value of cvv
      */ 
-    public function getPaymentCard()
+    public function getCvv()
     {
-        return $this->paymentCard;
+        return $this->cvv;
     }
 
     /**
-     * Set the value of paymentCard
+     * Set the value of cvv
      *
      * @return  self
      */ 
-    public function setPaymentCard($paymentCard)
+    public function setCvv($cvv)
     {
-        $this->paymentCard = $paymentCard;
+        $this->cvv = $cvv;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of expire
+     */ 
+    public function getExpire()
+    {
+        return $this->expire;
+    }
+
+    /**
+     * Set the value of expire
+     *
+     * @return  self
+     */ 
+    public function setExpire($expire)
+    {
+        $this->expire = $expire;
 
         return $this;
     }

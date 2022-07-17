@@ -13,14 +13,14 @@ Alcuni prodotti (es. antipulci) avranno la caratteristica che saranno disponibil
 require_once "classi/Products.php";
 require_once "classi/Aliments.php";
 require_once "classi/Games.php";
-require_once "classi/Accessories.php";
 require_once "classi/Users.php";
+require_once "classi/Payment.php";
 require_once "classi/PaymentMethod.php";
 
-$user = new Users("Mario", "Rossi", "mariorossi@gmail.com");
-var_dump($user);
 
-$user->register("Lucia", "Bianchi", "luciabianchi@gmail.com");
+$user = new Users();
+$user->register("Mario", "Rossi", "mariorossi@gmail.com");
+$user->payment->add(new PaymentMethod("visa", "6456457353467343546", "654", "09/22"));
 var_dump($user);
 
 
@@ -30,7 +30,16 @@ $products = [
     new Games("Palla", 7.40, "stoffa", "verde"),
     new Games("Fresbee", 5.90, "plastica riciclata", "giallo"),
 ];
-var_dump($products);
+/* var_dump($products); */
+
+$user->cart->add($products[0]);
+$user->cart->add($products[1]);
+$user->cart->add($products[2]);
+$user->cart->add($products[3]);
 
 
+
+var_dump($user->cart->getProducts());
+var_dump($user->payment);
+var_dump($user->checkout());
 ?>

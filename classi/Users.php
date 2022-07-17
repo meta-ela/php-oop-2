@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . "/Cart.php";
+require_once __DIR__ . "/Payment.php";
 class Users
 {
     private $firstName;
@@ -7,10 +8,12 @@ class Users
     private $email;
     private $registered = false;
     public Cart $cart;
+    public Payment $payment;
 
     public function __construct($_firstName = null, $_lastName = null, $_email = null)
     {
         $this->cart = new Cart();
+        $this->payment = new Payment();
 
         if(isset($email) && isset($_firstName) && isset($_lastName)) {
             $this->setFirstName($_firstName);
@@ -106,5 +109,16 @@ class Users
         $this->setLastName($_lastName);
         $this->setEmail($_email);
         $this->setRegistered(true);
+    }
+
+    public function checkout()
+    {
+        $total = $this->cart->getTotal();    
+        $discount = $this->registered ? 20 : 0;
+        $totalOnDiscount = $total - ($total * $discount / 100);
+
+        var_dump($total);
+        var_dump($totalOnDiscount);
+
     }
 }

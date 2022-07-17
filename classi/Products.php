@@ -2,6 +2,7 @@
 
 class Products
 {
+    private string $id;
     private string $name;
     private float $price;
 
@@ -9,6 +10,7 @@ class Products
     {
         $this->setName($_name);
         $this->setPrice($_price);
+        $this->id = uniqid();
     }
 
     /**
@@ -47,6 +49,26 @@ class Products
     public function setPrice($price)
     {
         $this->price = $price;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of id
+     */ 
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set the value of id
+     *
+     * @return  self
+     */ 
+    public function setId($id)
+    {
+        $this->id = $id;
 
         return $this;
     }
